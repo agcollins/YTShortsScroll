@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "target": "es2015",
+        "lib": ["dom", "es6"],
+        "outDir": "./build",
+        "sourceMap": true
+    },
+    "filesGlob": [
+        "./src/*.ts"
+    ]
+}

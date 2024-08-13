@@ -1,0 +1,21 @@
+{
+  "name": "ytshortsscroll",
+  "version": "0.1.0",
+  "description": "Scrolls past finished YouTube shorts.",
+  "main": "popup.js",
+  "scripts": {
+    "zip": "node build/package.js",
+    "package": "npm run build && npm run zip",
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "^0.0.270",
+    "@types/node": "^22.2.0",
+    "adm-zip": "^0.5.15",
+    "chrome-types": "^0.1.297",
+    "typescript": "^5.5.4"
+  }
+}
