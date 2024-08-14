@@ -131,3 +131,6 @@ dist
 
 # build directory
 build/
+
+# zipped output
+output.zip
