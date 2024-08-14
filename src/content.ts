@@ -8,8 +8,10 @@ const keyDownEvent = new KeyboardEvent('keydown', {
     bubbles: true
 })
 
-video?.addEventListener('timeupdate', () => {
-    if (video.duration - video.currentTime <= threshold) {
-        document.dispatchEvent(keyDownEvent)
+if (video) {
+    video.ontimeupdate = event => {
+        if (video.duration - video.currentTime <= threshold) {
+            document.dispatchEvent(keyDownEvent)
+        }
     }
-})
+}
