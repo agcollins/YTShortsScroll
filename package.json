@@ -6,10 +6,10 @@
   "scripts": {
     "clean": "node src/clean.js",
     "build": "npm run clean && npx tsc",
-    "zip": "node build/package.js",
+    "zip": "node build/zip.js",
     "package": "npm run build && npm run zip"
   },
-  "author": "",
+  "author": "Alexander Collins",
   "license": "ISC",
   "devDependencies": {
     "@types/chrome": "^0.0.270",

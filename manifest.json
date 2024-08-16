@@ -8,12 +8,12 @@
     "default_icon": "app_icon.png"
   },
   "background": {
-    "service_worker": "build/background.js"
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
       "js": [
-        "build/content.js"
+        "content.js"
       ],
       "matches": [
         "https://www.youtube.com/*"
