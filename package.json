@@ -2,11 +2,10 @@
   "name": "ytshortsscroll",
   "version": "0.2.0",
   "description": "Scrolls past finished YouTube shorts.",
-  "main": "popup.js",
   "scripts": {
-    "clean": "node src/clean.js",
+    "clean": "node scripts/clean.js",
     "build": "npm run clean && npx tsc",
-    "zip": "node build/zip.js",
+    "zip": "node scripts/zip.js",
     "package": "npm run build && npm run zip"
   },
   "author": "Alexander Collins",
