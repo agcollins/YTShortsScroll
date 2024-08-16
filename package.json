@@ -4,7 +4,8 @@
   "description": "Scrolls past finished YouTube shorts.",
   "main": "popup.js",
   "scripts": {
-    "build": "npx tsc",
+    "clean": "node src/clean.js",
+    "build": "npm run clean && npx tsc",
     "zip": "node build/package.js",
     "package": "npm run build && npm run zip"
   },

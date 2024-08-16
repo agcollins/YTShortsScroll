@@ -9,7 +9,7 @@ const keyDownEvent = new KeyboardEvent('keydown', {
 })
 
 if (video) {
-    video.ontimeupdate = event => {
+    video.ontimeupdate = _ => {
         if (video.duration - video.currentTime <= threshold) {
             document.dispatchEvent(keyDownEvent)
         }
