@@ -4,10 +4,9 @@
   "description": "Scrolls past finished YouTube shorts.",
   "main": "popup.js",
   "scripts": {
-    "zip": "node build/package.js",
-    "package": "npm run build && npm run zip",
     "build": "npx tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "zip": "node build/package.js",
+    "package": "npm run build && npm run zip"
   },
   "author": "",
   "license": "ISC",
