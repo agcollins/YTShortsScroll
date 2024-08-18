@@ -1,3 +1,4 @@
+console.log('Script running')
 const threshold = 0.3;
 const video = document.querySelector('video')
 const keyDownEvent = new KeyboardEvent('keydown', {
@@ -9,9 +10,14 @@ const keyDownEvent = new KeyboardEvent('keydown', {
 })
 
 if (video) {
+    console.log('attaching listener')
     video.ontimeupdate = _ => {
+        console.log('ontimeupdate')
         if (video.duration - video.currentTime <= threshold) {
+            console.log('skipping video now.')
             document.dispatchEvent(keyDownEvent)
         }
     }
+} else {
+    console.log('listener not attached')
 }

@@ -2,21 +2,26 @@
   "manifest_version": 3,
   "name": "YTShortsScroll",
   "description": "Scrolls past finished YouTube shorts.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "action": {
     "default_popup": "popup.html",
     "default_icon": "app_icon.png"
   },
-  "background": {
-    "service_worker": "background.js"
-  },
+  "permissions": [
+    "webNavigation",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
   "content_scripts": [
     {
       "js": [
         "content.js"
       ],
       "matches": [
-        "https://www.youtube.com/*"
+        "*://*.youtube.com/*"
       ],
       "run_at": "document_idle"
     }
