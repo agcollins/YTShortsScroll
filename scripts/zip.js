@@ -15,6 +15,7 @@ try {
     zip.addLocalFile(manifest.action.default_icon)
     zip.addLocalFile(manifest.action.default_popup)
     zip.addLocalFolder(tsconfig.compilerOptions.outDir)
+    zip.extractAllTo('output', true)
     zip.writeZip(outputFile)
 } catch (e) {
     console.log('Could not create archive. Cause:')

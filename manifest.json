@@ -1,17 +1,12 @@
 {
   "manifest_version": 3,
   "name": "YTShortsScroll",
-  "description": "Tired of manually scrolling after a YouTube short is finished? Try this out. Once a YouTube short is finished, the down arrow is pressed, skipping the looping behavior. This should also work when a tab is not in focus, but not currently when it is in the background. For now, this behavior happens on every YouTube short that runs. I plan to add configuration options for skipping certain videos based on criteria such as like/dislike ratio, number of likes, etc.",
-  "version": "0.3.0",
+  "description": "Scrolls past finished YouTube shorts.",
+  "version": "0.4.0",
   "action": {
     "default_popup": "popup.html",
     "default_icon": "app_icon.png"
   },
-  "permissions": [
-    "webNavigation",
-    "activeTab",
-    "scripting"
-  ],
   "host_permissions": [
     "https://www.youtube.com/*"
   ],

@@ -1,6 +1,6 @@
 {
   "name": "ytshortsscroll",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Scrolls past finished YouTube shorts.",
   "scripts": {
     "clean": "node scripts/clean.js",

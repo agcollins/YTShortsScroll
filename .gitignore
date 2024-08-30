@@ -137,3 +137,7 @@ output.zip
 
 # vscode files
 .vscode/
+
+# output directory
+output/
+
