@@ -2,10 +2,14 @@
     "compilerOptions": {
         "module": "ESNext",
         "moduleResolution": "Node",
-        "target": "es2015",
+        "target": "ESNext",
         "lib": ["dom", "es6"],
+        "types": ["jest"],
         "outDir": "./build",
-        "sourceMap": true
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
     },
     "include": ["./src/**/*.ts"]
 }
