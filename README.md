@@ -13,5 +13,5 @@ For Chrome: Run `npm run build:chrome`
 For Firefox: Run `npm run build:firefox`
 
 ## To package (creates `output-chrome` or `output-firefox` folder and `output-chrome.zip` or `output-firefox.zip`)
-For Chrome: Run `npm run package:chrome`, then install the `output-chrome.zip` file in chrome://extensions
+For Chrome: Run `npm run package:chrome`, then install the `output-chrome` directory in chrome://extensions
 For Firefox: Run `npm run package:firefox`, then install the `output-firefox.zip` file in firefox://addons
