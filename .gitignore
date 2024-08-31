@@ -134,10 +134,12 @@ build/
 
 # zipped output
 output.zip
+output-chrome.zip
+output-firefox.zip
 
 # vscode files
 .vscode/
 
 # output directory
 output/
-
+output-*/
