@@ -1,6 +1,6 @@
 {
   "name": "ytshortsscroll",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Scrolls past finished YouTube shorts.",
   "scripts": {
     "clean": "node scripts/clean.js",
@@ -11,10 +11,7 @@
   "author": "Alexander Collins",
   "license": "ISC",
   "devDependencies": {
-    "@types/chrome": "^0.0.270",
-    "@types/node": "^22.2.0",
     "adm-zip": "^0.5.15",
-    "chrome-types": "^0.1.297",
     "typescript": "^5.5.4"
   }
 }

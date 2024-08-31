@@ -93,10 +93,3 @@ new MutationObserver(async () => {
         await onUrlChange();
     }
 }).observe(document, {subtree: true, childList: true});
-
-// Periodically check for Shorts page (in case URL doesn't change)
-setInterval(async () => {
-    if (isYouTubeShortsPage() && !isRunning) {
-        await startChecking();
-    }
-}, 1000);
