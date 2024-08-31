@@ -8,7 +8,8 @@ const browser = process.argv[2] || 'chrome'
 const manifest = require('../build/manifest.json')
 
 const zip = new AdmZip()
-const outputFile = `output-${browser}.zip`
+const outputDir = `output-${browser}`
+const outputFile = `${outputDir}.zip`
 
 try {
     if (fs.existsSync(outputFile)) {
@@ -19,7 +20,7 @@ try {
     zip.addLocalFile(manifest.action ? manifest.action.default_icon : manifest.browser_action.default_icon)
     zip.addLocalFile(manifest.action ? manifest.action.default_popup : manifest.browser_action.default_popup)
     zip.addLocalFolder(tsconfig.compilerOptions.outDir)
-    zip.extractAllTo(`output-${browser}`, true)
+    zip.extractAllTo(outputDir, true)
     zip.writeZip(outputFile)
     console.log(`Created ${outputFile}`)
 } catch (e) {
