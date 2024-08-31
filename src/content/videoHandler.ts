@@ -1,10 +1,7 @@
-let isRunning = false;
+import { isYouTubeShortsPage } from './util';
+import { getIsRunning, setIsRunning } from './state';
 
-function isYouTubeShortsPage(): boolean {
-    return window.location.pathname.startsWith('/shorts/');
-}
-
-function skipShort() {
+export function skipShort() {
     const keyDownEvent = new KeyboardEvent('keydown', {
         key: 'ArrowDown',
         code: 'ArrowDown',
@@ -15,7 +12,7 @@ function skipShort() {
     document.dispatchEvent(keyDownEvent);
 }
 
-function waitForVideo(timeout = 10000): Promise<HTMLVideoElement> {
+export function waitForVideo(timeout = 10000): Promise<HTMLVideoElement> {
     return new Promise((resolve, reject) => {
         const startTime = Date.now();
         const checkForVideo = () => {
@@ -38,9 +35,9 @@ function waitForVideo(timeout = 10000): Promise<HTMLVideoElement> {
     });
 }
 
-async function checkVideoProgress() {
+export async function checkVideoProgress() {
     if (!isYouTubeShortsPage()) {
-        isRunning = false;
+        setIsRunning(false);
         return;
     }
 
@@ -51,45 +48,12 @@ async function checkVideoProgress() {
         if (timeLeft <= 0.3) {
             skipShort();
         }
-        if (isRunning) {
+        if (getIsRunning()) {
             requestAnimationFrame(checkVideoProgress);
         }
     } catch (error) {
-        if (isRunning) {
+        if (getIsRunning()) {
             setTimeout(checkVideoProgress, 500);
         }
     }
 }
-
-async function startChecking() {
-    if (!isRunning) {
-        isRunning = true;
-        await waitForVideo();
-        checkVideoProgress();
-    }
-}
-
-function stopChecking() {
-    isRunning = false;
-}
-
-async function onUrlChange() {
-    if (isYouTubeShortsPage()) {
-        await startChecking();
-    } else {
-        stopChecking();
-    }
-}
-
-// Initial check
-onUrlChange();
-
-// Listen for URL changes
-let lastUrl = location.href;
-new MutationObserver(async () => {
-    const url = location.href;
-    if (url !== lastUrl) {
-        lastUrl = url;
-        await onUrlChange();
-    }
-}).observe(document, {subtree: true, childList: true});
