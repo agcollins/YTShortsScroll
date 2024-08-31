@@ -3,7 +3,8 @@ const tsconfig = require('../tsconfig.json')
 const fs = require('fs')
 const path = require('path')
 
-const browser = process.env.BROWSER || 'chrome'
+// Get the browser argument from the command line
+const browser = process.argv[2] || 'chrome'
 const manifest = require('../build/manifest.json')
 
 const zip = new AdmZip()
