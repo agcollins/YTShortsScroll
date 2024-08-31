@@ -15,6 +15,11 @@ describe('YouTube Shorts Page Detection', () => {
         expect(isYouTubeShortsPage()).toBe(true);
     });
 
+    test('should not check hostname', () => {
+        window.location.hostname = 'www.google.com';
+        expect(isYouTubeShortsPage()).toBe(true);
+    });
+
     test('should not detect non-YouTube Shorts page', () => {
         window.location.pathname = '/watch?v=some-video';
         expect(isYouTubeShortsPage()).toBe(false);

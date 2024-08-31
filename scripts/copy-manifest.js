@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const browser = process.argv[2];
-const sourceManifest = browser === 'firefox' ? 'manifest.firefox.json' : 'manifest.json';
+const sourceManifest = browser === 'firefox' ? 'manifest.firefox.json' : browser === 'safari' ? 'manifest.safari.json' : 'manifest.json';
 const targetDir = path.join(__dirname, '..', 'build');
 
 if (!fs.existsSync(targetDir)) {

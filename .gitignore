@@ -136,6 +136,7 @@ build/
 output.zip
 output-chrome.zip
 output-firefox.zip
+output-safari.zip
 
 # vscode files
 .vscode/
