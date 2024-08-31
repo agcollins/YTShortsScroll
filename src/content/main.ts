@@ -1,5 +1,5 @@
 import { waitForVideo, checkVideoProgress } from './videoHandler';
-import { isYouTubeShortsPage } from './util';
+import { isYouTubeShortsPage, handleUrlChanges } from './util';
 import { getIsRunning, setIsRunning } from './state';
 
 async function startChecking() {
@@ -26,11 +26,4 @@ async function onUrlChange() {
 onUrlChange();
 
 // Listen for URL changes
-let lastUrl = location.href;
-new MutationObserver(async () => {
-    const url = location.href;
-    if (url !== lastUrl) {
-        lastUrl = url;
-        await onUrlChange();
-    }
-}).observe(document, {subtree: true, childList: true});
+handleUrlChanges(onUrlChange);
