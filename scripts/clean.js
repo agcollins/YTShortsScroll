@@ -3,12 +3,8 @@ const tsconfig = require('../tsconfig.json')
 
 const toRemove = [
     tsconfig.compilerOptions.outDir,
-    'output-chrome',
-    'output-firefox',
-    'output-safari',
-    'output-chrome.zip',
-    'output-firefox.zip',
-    'output-safari.zip'
+    'output',
+    'output.zip'
 ]
 
 try {
