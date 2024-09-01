@@ -45,7 +45,7 @@ export async function checkVideoProgress() {
         const video = await waitForVideo();
         const timeLeft = video.duration - video.currentTime;
         
-        if (timeLeft <= 0.1) {
+        if (timeLeft <= 0.3) {
             skipShort();
         }
         if (getIsRunning()) {
