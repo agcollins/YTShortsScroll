@@ -3,12 +3,10 @@ const tsconfig = require('../tsconfig.json')
 const fs = require('fs')
 const path = require('path')
 
-// Get the browser argument from the command line
-const browser = process.argv[2] ?? 'chrome'
 const manifest = require('../build/manifest.json')
 
 const zip = new AdmZip()
-const outputDir = `output-${browser}`
+const outputDir = 'output'
 const outputFile = `${outputDir}.zip`
 
 try {
